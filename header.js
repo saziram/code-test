@@ -1,3 +1,6 @@
+/**
+ * Middleware file to set response headers
+ */
 module.exports.headers = (req, res, next) => {
     // Allow website to connect
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4000');
