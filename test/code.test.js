@@ -44,7 +44,7 @@ describe("API test suite", () => {
       });
   });  
 
-  it("Should call transformData function for Invalid valueType and return 203 status", done => {
+  it("Should call transformData function and return 203 status for valueType other valueTypes except Array/String", done => {
     payload.payload.value[2].valueType = "object";
     chai
       .request(app)
