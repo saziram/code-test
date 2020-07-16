@@ -1,8 +1,10 @@
 const express = require("express"), app = express(), router = express.Router();
 const bodyParser = require("body-parser");
-const dtoObj = require('./dto.js');
+const { headers } = require('./header');
+const dtoObj = require('./dto');
 
 app.use(bodyParser.json());
+app.use(headers);
 
 const transformData = (payloadValue) => {
     const payloadReferenceData = dtoObj.getReferenceData();
