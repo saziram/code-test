@@ -1,0 +1,26 @@
+{
+  "name": "coding-test",
+  "version": "1.0.0",
+  "description": "```JSON\r {\r   \"payload\": {\r     \"name\": \"subscriber\",\r     \"valueType\": \"array\",\r     \"value\": [\r       {\r         \"name\": \"MN\",\r         \"valueType\": \"string\",\r         \"value\": \"{REF_MSISDN}\"\r       },\r       {\r         \"name\": \"IM\",\r         \"valueType\": \"string\",\r         \"value\": \"{REF_IMSI}\"\r       },\r       {\r         \"name\": \"NT\",\r         \"valueType\": \"string\",\r         \"value\": \"G\"\r       },\r       {\r         \"name\": \"privateUser\",\r         \"valueType\": \"array\",\r         \"value\": [\r           {\r             \"name\": \"privateUserId\",\r             \"valueType\": \"string\",\r             \"value\": \"{REF_IMSI}@ims.mnc001.mcc505.3gppnetwork.org\"\r           },\r           {\r             \"name\": \"roamingAllowed\",\r             \"valueType\": \"string\",\r             \"value\": \"false\"\r           },\r           {\r             \"name\": \"publicUser\",\r             \"valueType\": \"array\",\r             \"value\": [\r               {\r                 \"name\": \"publicIdValue\",\r                 \"valueType\": \"string\",\r                 \"value\": \"sip:{REF_IMSI}@ims.mnc001.mcc505.3gppnetwork.org\"\r               },\r               {\r                 \"name\": \"implicitRegSet\",\r                 \"valueType\": \"string\",\r                 \"value\": \"1\"\r               },\r               {\r                 \"name\": \"serviceProfileId\",\r                 \"valueType\": \"string\",\r                 \"value\": \"{REF_SERVPROFID}\"\r               },\r               {\r                 \"name\": \"testUser\",\r                 \"valueType\": \"array\",\r                 \"value\": [\r                   {\r                     \"name\": \"testIdValue\",\r                     \"valueType\": \"string\",\r                     \"value\": \"sip:{REF_IMSI}@ims.mod-connect.com\"\r                   },\r                   {\r                     \"name\": \"implicitRegSet\",\r                     \"valueType\": \"string\",\r                     \"value\": \"2\"\r                   }\r                 ]\r               }\r             ]\r           },\r           {\r             \"name\": \"userImsi\",\r             \"valueType\": \"string\",\r             \"value\": \"{REF_IMSI}\"\r           }\r         ]\r       },\r       {\r         \"name\": \"PO\",\r         \"valueType\": \"string\",\r         \"value\": \"0\"\r       }\r     ]\r   },\r   \"referenceData\": {\r     \"REF_MSISDN\": \"0406679321\",\r     \"REF_IMSI\": \"50002312344314\",\r     \"REF_SERVPROFID\": \"2\"\r   }\r }\r ```",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mocha": "^8.0.1",
+    "nodemon": "^2.0.4"
+  },
+  "scripts": {
+    "test": "mocha",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sam-dev-challenge/coding-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sam-dev-challenge/coding-test/issues"
+  },
+  "homepage": "https://github.com/sam-dev-challenge/coding-test#readme"
+}
