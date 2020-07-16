@@ -9,4 +9,4 @@ dto.prototype = {
   setPayload : (value) => { _payload = value; }
 }
 
-module.exports = dto;
+module.exports = new dto();

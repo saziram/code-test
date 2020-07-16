@@ -1,12 +1,11 @@
 const express = require("express"), app = express(), router = express.Router();
 const bodyParser = require("body-parser");
-const dto = require('./dto.js');
+const dtoObj = require('./dto.js');
 
 // middlewares
 app.use(bodyParser.json());
 
 const transformData = (payloadValue) => {
-    const dtoObj = new dto();
     const payloadReferenceData = dtoObj.getReferenceData();
     for (const referenceData in payloadReferenceData) {
         if(payloadValue.valueType === "array"){
@@ -20,7 +19,6 @@ const transformData = (payloadValue) => {
 
 app.post('/', (req, res) => {
     if(req && req.body && req.body.hasOwnProperty('payload') && req.body.hasOwnProperty('referenceData')){  
-        const dtoObj = new dto();
         dtoObj.setReferenceData(req.body.referenceData);
         const expectedData = JSON.parse(JSON.stringify(req.body.payload));
         expectedData.value.map(transformData);
