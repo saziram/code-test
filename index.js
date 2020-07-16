@@ -1,6 +1,6 @@
 /**
  * Entry point
- * handle Post API request and tranform the request payload data into expected response data
+ * Handle Post API request and transform the request payload data into expected response data using transformData function
  */
 const express = require("express"), app = express(), router = express.Router();
 const bodyParser = require("body-parser");
@@ -45,14 +45,14 @@ app.post('/', async(req, res) => {
             //map reference data using setReferenceData function
             dtoObj.setReferenceData(req.body.referenceData);
             const expectedData = JSON.parse(JSON.stringify(req.body.payload));
-            let error;
+            let _error;
             try {
                 //call transformData for each element to replace the matching string
                 await expectedData.value.map(transformData);
-            } catch(e) {                
-                error = e;
+            } catch(error) {                
+                _error = error;
             } finally {
-                if(error){
+                if(_error){
                     //return 203 if the valueType is not a string/array
                     res.status(203).send(); 
                 }else{

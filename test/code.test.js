@@ -20,7 +20,7 @@ describe("API test suite", () => {
   * it should convert payload data into expected response
   * it should respond the transformed json data with status as 200
   */
- it("Should call transformData function and return expectedData with 200 status", done => {
+ it("Should call transformData function and return 200 status with expectedData", done => {
   chai
     .request(app)
     .post("/")
