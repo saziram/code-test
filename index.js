@@ -2,7 +2,7 @@ const express = require("express"), app = express(), router = express.Router();
 const bodyParser = require("body-parser");
 const dtoObj = require('./dto.js');
 
-// middlewares
+// middleware
 app.use(bodyParser.json());
 
 const transformData = (payloadValue) => {
@@ -22,7 +22,8 @@ app.post('/', (req, res) => {
         dtoObj.setReferenceData(req.body.referenceData);
         const expectedData = JSON.parse(JSON.stringify(req.body.payload));
         expectedData.value.map(transformData);
-        res.end(JSON.stringify(expectedData));  
+        res.status(200)
+           .json(expectedData);  
         //console.log(JSON.stringify(expectedData));
     }
 })
@@ -31,3 +32,5 @@ app.post('/', (req, res) => {
 app.listen(4000, () => {
     console.log('Server listening at http://localhost:4000');
 });  
+
+module.exports = app
